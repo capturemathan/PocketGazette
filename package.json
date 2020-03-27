@@ -1,0 +1,27 @@
+{
+  "name": "pocketgazette",
+  "version": "1.0.0",
+  "description": "Pings NewsAPI to fetch the latest news.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capturemathan/PocketGazette.git"
+  },
+  "keywords": [
+    "newsapi"
+  ],
+  "author": "Mathana Kumar s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capturemathan/PocketGazette/issues"
+  },
+  "homepage": "https://github.com/capturemathan/PocketGazette#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
