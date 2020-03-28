@@ -1,16 +1,39 @@
 <html>
     <head>
-    <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
+    <!--Import Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Lato|Montserrat|Pacifico|Rancho&display=swap" rel="stylesheet">
+    <!--Import CSS Files-->
       <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/css/home.css"/>
     <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Pocket Gazette</title>
     </head>
     <body>
-        <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
-        <!--JavaScript at end of body for optimized loading-->
-            <script type="text/javascript" src="/js/materialize.js"></script>
+        
+      <div class="col s12 m7">
+      <div class="card horizontal small" id="newscard">
+        <div class="card-image" id="cardimg">
+          <img src="https://static.toiimg.com/thumb/msid-74863787,width-1070,height-580,imgsize-1274261,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <div class="row">
+            <div class="chip" id="sourcechip">
+              The Times of India
+            </div></div>
+            <p id="newstitle">Suresh Raina pledges Rs 52 lakh to help fight the coronavirus pandemic - Times of India</p>
+            <p id="newsdesc">Off the field News: Indian cricketer Suresh Raina on Saturday pledged to donate a sum of Rs 52 lakh for the fight against the novel coronavirus, joining a list of other I</p>
+          </div>
+          <div class="card-action">
+            <div class="chip"><a href="#">Read full article</a></div>
+            <div class="chip"><a href="#">News Author</a></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+    <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="/js/materialize.js"></script>
     </body>
 </html>
