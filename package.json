@@ -21,6 +21,7 @@
   "homepage": "https://github.com/capturemathan/PocketGazette#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "bulma": "^0.8.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2"

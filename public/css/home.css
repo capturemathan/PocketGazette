@@ -1,18 +1,42 @@
-#newstitle{
-    font-family: Quicksand;
-    font-weight: bold;
-    font-size: larger;
+html {
+    scroll-behavior: smooth;
+}
+.pageheading {
+    color: black;
+    font-family: Pacifico;
     text-align: center;
+    font-size: 2.0em;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
 }
-
-#cardimg img{
-    border-radius: 15%;
-}
-
 #newscard{
-    margin: 20;
-    border-radius: 10;
+    margin: 10;
+    padding: 10;
 }
 #sourcechip{
     float: right;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+#newstitle{
+    font-family: Special Elite;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+#newsdesc{
+    font-family: Quicksand;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+#footerchip{
+    margin-top: 10;
+}
+
+#footerchip a{
+    color: black;
+    font-family: Quicksand;
+    font-weight: bold;
 }
