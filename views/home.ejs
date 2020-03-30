@@ -15,29 +15,30 @@
             <div class="container has-text-centered">
                 <h1 class="pageheading">
                     <span>Pocket Gazette</span></h1>
-
+              
+              <% for(var i=0;i<5;i++) {%>
               <!--NEWS CARD STARTS-->      
                 <div class="columns is-vcentered">
-                    <div class="column">
-                        <img src="/assets/newsreader.png" height="200" width="200">
+                    <div class="column is-one-quarter">
+                        <img src= <%= imgurls[i] %> height="200" width="200">
                     </div>
                     <div class="column" id="formbg">
                       <div class="card" id="newscard">
-                        <span class="tag is-rounded is-link" id="sourcechip">The Indian Express</span>
+                        <span class="tag is-rounded is-link" id="sourcechip"><%= sources[i] %></span>
                         <div class="card-content" id="newstitle">
-                          ‘Game Zero’: Why a Champions League match turned into a ‘biological bomb’ in Italy - The Indian Express
+                        <%=  titles[i] %>
                           <div class="content" id="newsdesc">
-                            More than 40,000 fans gathered on a historic night for Atalanta and Valencia at the iconic San Siro stadium in Milan, Italy.
+                            <%=  descriptions[i] %>
                           </div>
                         </div>
                         <footer class="card-footer">
-                          <span class="tag is-rounded is-warning" id="footerchip"><a href="#" class="card-footer-item">Read full article</a></span>
+                          <span class="tag is-rounded is-warning" id="footerchip"><a href= <%= urls[i] %> class="card-footer-item">Read full article</a></span>
                         </footer>
                       </div>
                     </div>
                 </div>
                 <!--NEWS CARD ENDS-->
-                 
+                <%}%> 
             </div>
         </div>
     </section>

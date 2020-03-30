@@ -14,11 +14,7 @@ var imgurls = new Array();
 var sources = new Array(); 
 
 app.get('/',function(req,res){
-    res.render('home')
-});
-
-app.get('/news',function(req,res){
-axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
+  axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
   .then(function (response) {
     var articles = response["data"]["articles"];
     for(var i=0;i<10;i++)
@@ -36,6 +32,11 @@ axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKe
     // handle error
     console.log(error);
   });
+    res.render('home',{sources:sources,authors:authors,titles:titles,descriptions:descriptions,urls:urls,imgurls:imgurls})
+});
+
+app.get('*',function(req,res){
+  res.render('error')
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
