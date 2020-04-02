@@ -26,13 +26,13 @@ app.get('/',function(req,res){
         urls.push(articles[i]["url"])
         imgurls.push(articles[i]["urlToImage"])
     }
-    res.send(sources[0]+authors[0]+titles[0]+descriptions[0]+urls[0]+imgurls[0]+sources.length)
+    res.setHeader('Content-Type', 'application/json');
+    res.render('home',{sources:sources,authors:authors,titles:titles,descriptions:descriptions,urls:urls,imgurls:imgurls})
   })
   .catch(function (error) {
     // handle error
     console.log(error);
-  });
-    res.render('home',{sources:sources,authors:authors,titles:titles,descriptions:descriptions,urls:urls,imgurls:imgurls})
+  });   
 });
 
 app.get('*',function(req,res){
