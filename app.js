@@ -67,6 +67,20 @@ app.get('/register',function(req,res){
   res.render('register')
 });
 
+app.post('/register',function(req,res){
+  var newUser = new User({username: req.body.uname})
+  User.register(newUser,req.body.pwd,function(err,user){
+    if(err){
+      console.log(err)
+      return res.render('register')
+    }
+    passport.authenticate("local")(req,res,function(){
+      res.setHeader('Content-Type', 'text/html');
+      res.redirect('/');
+    });
+  });
+});
+
 app.get('/login',function(req,res){
   res.render('login')
 });
