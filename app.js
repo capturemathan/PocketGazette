@@ -67,6 +67,10 @@ app.get('/register',function(req,res){
   res.render('register')
 });
 
+app.get('/login',function(req,res){
+  res.render('login')
+});
+
 app.get('*',function(req,res){
   res.render('error')
 });

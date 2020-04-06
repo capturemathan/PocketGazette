@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    color: black;
 }
 .pageheading {
     color: black;
@@ -9,6 +10,25 @@ html {
     margin-top: 10px;
     padding-bottom: 30px;
     margin-bottom: 10px;
+}
+
+.pagetitle {
+    color: black;
+    font-family: Quicksand;
+    text-align: center;
+    font-size: 2.0em;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+.pagetitle span {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #1b262c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
 }
 #newscard{
     margin: 10;
@@ -40,7 +60,28 @@ html {
     font-family: Quicksand;
     font-weight: bold;
 }
+
 footer {
     font-size: 1.3em;
     font-family: 'Pacifico';
+}
+
+.label{
+    font-size: 1.3em;
+    font-family: 'Pacifico';
+}
+
+#button {
+    color: white;
+    font-family: Quicksand;
+    font-weight: lighter;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: right;
+    margin-top: 10px;
+    background-color: #1b262c;
+}
+
+input, textarea, select {
+    font-family: Quicksand;
 }
