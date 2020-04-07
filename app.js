@@ -16,7 +16,7 @@ const port = 3000;
 app.set("view engine","ejs")
 app.use(express.static(__dirname+'/public'))
 app.use(bodyParser.urlencoded({extended: true}))
-mongoose.connect("mongodb://localhost/newsapp")
+mongoose.connect("mongodb://localhost/newsapp", { useNewUrlParser: true, useUnifiedTopology: true})
 
 // Express Session Setup
 app.use(session({
@@ -68,8 +68,8 @@ app.get('/register',function(req,res){
 });
 
 app.post('/register',function(req,res){
-  var newUser = new User({username: req.body.uname})
-  User.register(newUser,req.body.pwd,function(err,user){
+  var newUser = new User({username: req.body.username})
+  User.register(newUser,req.body.password,function(err,user){
     if(err){
       console.log(err)
       return res.render('register')
