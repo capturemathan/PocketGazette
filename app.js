@@ -41,7 +41,8 @@ var imgurls = new Array();
 var sources = new Array(); 
 
 // Route Configurations
-app.get('/',function(req,res){
+
+app.get('/news',function(req,res){
   axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
   .then(function (response) {
     var articles = response["data"]["articles"];
@@ -61,6 +62,10 @@ app.get('/',function(req,res){
     // handle error
     console.log(error);
   });   
+})
+
+app.get('/',function(req,res){
+  res.redirect('/news')
 });
 
 app.get('/register',function(req,res){
@@ -76,7 +81,7 @@ app.post('/register',function(req,res){
     }
     passport.authenticate("local")(req,res,function(){
       res.setHeader('Content-Type', 'text/html');
-      res.redirect('/');
+      res.redirect('/news');
     });
   });
 });
@@ -84,6 +89,26 @@ app.post('/register',function(req,res){
 app.get('/login',function(req,res){
   res.render('login')
 });
+
+app.post('/login',passport.authenticate("local",{
+  successRedirect:'/news',
+  failureRedirect:'/login'
+}),function(req,res){
+
+})
+
+app.get('/logout',function(req,res){
+  req.logout();
+  res.redirect('/news')
+})
+
+// Middleware for checking Logged In Users
+function isLoggedIn(req,res,next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/login');
+}
 
 app.get('*',function(req,res){
   res.render('error')
