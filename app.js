@@ -25,6 +25,12 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+// Passing Current User Variable
+app.use(function(req,res,next){
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // Passport Setup
 app.use(passport.initialize());
 app.use(passport.session());
@@ -43,6 +49,7 @@ var sources = new Array();
 // Route Configurations
 
 app.get('/news',function(req,res){
+  console.log(req.user)
   axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
   .then(function (response) {
     var articles = response["data"]["articles"];
@@ -56,7 +63,7 @@ app.get('/news',function(req,res){
         imgurls.push(articles[i]["urlToImage"])
     }
     res.setHeader('Content-Type', 'text/html');
-    res.render('home',{sources:sources,authors:authors,titles:titles,descriptions:descriptions,urls:urls,imgurls:imgurls})
+    res.render('home',{sources:sources,authors:authors,titles:titles,descriptions:descriptions,urls:urls,imgurls:imgurls,currentUser:req.user})
   })
   .catch(function (error) {
     // handle error

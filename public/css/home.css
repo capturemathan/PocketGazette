@@ -85,3 +85,11 @@ footer {
 input, textarea, select {
     font-family: Quicksand;
 }
+
+.navbar-item{
+    font-family: Quicksand;
+}
+#navtext {
+    font-family: Pacifico;
+    font-size: 1.3em;
+}

@@ -10,6 +10,32 @@
       <title>Pocket Gazette</title>
     </head>
     <body>
+      <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <!-- navbar items -->
+                <div class="navbar-item" id="navtext"></div>
+            </div>
+            <div class="navbar-end">
+                <!--Navigation Items-->
+                <% if (!currentUser) {%>
+                <a class="navbar-item" href="/login">
+                    Login
+                </a>
+                <a class="navbar-item" href="/register">
+                    Register
+                </a>
+                <%} else {%>
+                <a class="navbar-item" href="">
+                    Bookmarks
+                </a>
+                <a class="navbar-item" href="/logout">
+                    Logout
+                </a>
+                <%}%>
+            </div>
+        </div>
+    </nav>
       <section id="heroid" class="hero is-fullheight is-hcentered">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -53,6 +79,16 @@
           </p>
       </div>
     </footer>
+    
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+        var app = document.getElementById('navtext');
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+        typewriter.typeString('Trending now')
+            .start();
+    </script>
 
     </body>
 </html>
