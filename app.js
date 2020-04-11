@@ -8,7 +8,8 @@ const express       = require("express"),
       session       = require('express-session');
 
 // Include MongoDB models
-const User = require('./models/user');
+const Article = require('./models/article');
+const User    = require('./models/user');
       
 // Additional Setup
 const app  = express();
@@ -103,6 +104,38 @@ app.post('/login',passport.authenticate("local",{
 }),function(req,res){
 
 })
+
+app.get('/bookmarks/:username',isLoggedIn,function(req,res){
+  User.findOne({username: req.params.username}).populate('articles').exec(function(err,foundBookmarks){
+    if(err){console.log(err)}
+    else{
+      console.log(foundBookmarks)
+      res.render('bookmarks',{bookmarks:foundBookmarks});
+    }
+  });
+});
+
+app.post('/bookmarks/:username',isLoggedIn,function(req,res){
+  User.findOne({username: req.params.username},function(err,user){
+    if(err){console.log(err)}
+    else{
+      Article.create({
+        imgurl:      req.body.imgurl,
+        source:      req.body.source,
+        title:       req.body.title,
+        description: req.body.description,
+        url:         req.body.url
+      },function(err,article){
+          if(err){console.log(err)}
+          else{
+            user.articles.push(article)
+            user.save()
+            console.log("Bookmarked article successfully")
+          }
+    })
+  }
+});
+});
 
 app.get('/logout',function(req,res){
   req.logout();
