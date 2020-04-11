@@ -59,6 +59,17 @@
                         </div>
                         <footer class="card-footer">
                           <span class="tag is-rounded is-warning" id="footerchip"><a target="_blank" href= <%= urls[i] %> class="card-footer-item">Read full article</a></span>
+                          <p></p>
+                          <%if(currentUser){%>
+                          <form action="/bookmarks/<%= currentUser['username'] %>" method="POST">
+                            <input class="input" id="hiddeninput" type="text" name="imgurl" value=<%= imgurls[i] %>>
+                            <input class="input" id="hiddeninput" type="text" name="source" value=<%= sources[i] %>>
+                            <input class="input" id="hiddeninput" type="text" name="title" value='<%= titles[i] %>'>
+                            <input class="input" id="hiddeninput" type="text" name="description" value='<%= descriptions[i] %>'>
+                            <input class="input" id="hiddeninput" type="text" name="url" value=<%= urls[i] %>>
+                            <input type="submit" id="bookmarkbutton" class="tag is-rounded is-danger" value="Bookmark this article">
+                          </form>
+                          <%}%>
                         </footer>
                       </div>
                     </div>

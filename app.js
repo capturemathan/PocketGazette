@@ -50,7 +50,6 @@ var sources = new Array();
 // Route Configurations
 
 app.get('/news',function(req,res){
-  console.log(req.user)
   axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
   .then(function (response) {
     var articles = response["data"]["articles"];
@@ -130,7 +129,8 @@ app.post('/bookmarks/:username',isLoggedIn,function(req,res){
           else{
             user.articles.push(article)
             user.save()
-            console.log("Bookmarked article successfully")
+            console.log(article)
+            res.redirect('/bookmarks/'+req.params.username)
           }
     })
   }

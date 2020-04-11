@@ -82,6 +82,17 @@ footer {
     background-color: #1b262c;
 }
 
+#bookmarkbutton{
+    margin-top: 10px;
+    font-family: Quicksand;
+    font-weight: bold;
+    border: none;   
+}
+
+#bookmarkbutton:hover{
+    cursor: pointer;
+}
+
 input, textarea, select {
     font-family: Quicksand;
 }
@@ -92,4 +103,7 @@ input, textarea, select {
 #navtext {
     font-family: Pacifico;
     font-size: 1.3em;
+}
+#hiddeninput{
+    display: none;
 }
