@@ -10,6 +10,7 @@
       <title>Pocket Gazette</title>
     </head>
     <body>
+      <%if(bookmarks.articles.length!=0){%>
     <section id="heroid" class="hero is-fullheight is-hcentered">
     <div class="hero-body">
         <div class="container has-text-centered">
@@ -40,5 +41,15 @@
         </div>
         </div>
     </section>
+    <%}else{%>
+      <section id="heroid" class="hero is-fullheight is-hcentered is-vcentered">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <img src="/assets/bookmarks.png" height="500" width="500">
+                <p style="font-family: Pacifico; color: black; font-size: 1.3em;">You don't have any Bookmarks.</p>
+            </div>
+        </div>
+    </section>
+  <%}%>
     </body>
 </html>

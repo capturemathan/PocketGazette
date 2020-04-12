@@ -80,6 +80,7 @@ footer {
     float: right;
     margin-top: 10px;
     background-color: #1b262c;
+    border: none;
 }
 
 #bookmarkbutton{
