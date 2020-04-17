@@ -13,7 +13,7 @@ const User    = require('./models/user');
       
 // Additional Setup
 const app  = express();
-const port = 3000;
+const port = process.env.PORT || 3000
 app.set("view engine","ejs")
 app.use(express.static(__dirname+'/public'))
 app.use(bodyParser.urlencoded({extended: true}))
