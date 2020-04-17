@@ -17,7 +17,7 @@ const port = 3000;
 app.set("view engine","ejs")
 app.use(express.static(__dirname+'/public'))
 app.use(bodyParser.urlencoded({extended: true}))
-mongoose.connect("mongodb://localhost/newsapp", { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
 
 // Express Session Setup
 app.use(session({
@@ -50,7 +50,7 @@ var sources = new Array();
 // Route Configurations
 
 app.get('/news',function(req,res){
-  axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=c60dc7c66a474c03ba181227554788ee')
+  axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=c60dc7c66a474c03ba181227554788ee')
   .then(function (response) {
     var articles = response["data"]["articles"];
     for(var i=0;i<10;i++)
