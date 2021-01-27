@@ -9,10 +9,10 @@
 3. `Axios` for API req. and res.
 4. `Mongoose` for handling MongoDB transactions.
 
-### `Local Setup`
-1. git clone `https://github.com/capturemathan/PocketGazette.git`
+### Local Setup
+1. git clone https://github.com/capturemathan/PocketGazette.git
 2. cd PocketGazette
 3. npm install
 4. Start MongoDB in a new terminal.
-5. Open `App.js`, uncomment `Development URL` and comment `Production URL`.
+5. Open App.js, uncomment Development URL and comment Production URL.
 6. npm start
